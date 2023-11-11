@@ -1,0 +1,75 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Email and Password Authentication</title>
+</head>
+<body>
+    <script>
+        function validateEmail(email) {
+            // Regular expression for a valid email address
+            const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+            return emailRegex.test(email);
+        }
+
+        function validatePassword(password) {
+            // Regular expression for a password with at least 8 characters and one uppercase letter, one lowercase letter, and one digit
+            const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
+            return passwordRegex.test(password);
+        }
+
+        function authenticate() {
+            const email = prompt("Enter your email:");
+            const password = prompt("Enter your password:");
+
+            if (validateEmail(email) && validatePassword(password)) {
+                alert("Authentication successful! Welcome, " + email);
+            } else {
+                alert("Authentication failed. Please check your email and password.");
+            }
+        }
+
+        authenticate();
+    </script>
+</body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Email and Password Authentication</title>
+</head>
+<body>
+    <script>
+        function validateEmail(email) {
+            // Regular expression for a valid email address
+            const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+            return emailRegex.test(email);
+        }
+
+        function validatePassword(password) {
+            // Regular expression for a password with at least 8 characters and one uppercase letter, one lowercase letter, and one digit
+            const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
+            return passwordRegex.test(password);
+        }
+
+        function authenticate() {
+            const email = prompt("Enter your email:");
+            const password = prompt("Enter your password:");
+
+            if (validateEmail(email) && validatePassword(password)) {
+                alert("Authentication successful! Welcome, " + email);
+            } else {
+                throw new Error("Authentication failed. Please check your email and password.");
+            }
+        }
+
+        try {
+            authenticate();
+        } catch (error) {
+            alert(error.message);
+        }
+    </script>
+</body>
+</html> 
